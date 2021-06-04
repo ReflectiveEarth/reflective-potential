@@ -1,5 +1,5 @@
 # reflective-potential
-An empirical analysis of Earth's reflective potential
+### An empirical analysis of Earth's reflective potential
 
 Reflective Earth is on a mission to slow global warming as fast and safely as
 possible by increasing Earth's reflectivity to reduce its energy imbalance.
