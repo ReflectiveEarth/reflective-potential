@@ -1,6 +1,8 @@
 # reflective-potential
 ### An empirical analysis of Earth's reflective potential
 
+## Introduction
+
 Reflective Earth is on a mission to slow global warming as fast and safely as
 possible by increasing Earth's reflectivity to reduce its energy imbalance.
 Reflectivity interventions reduce the amount of sunlight absorbed by the Earth
@@ -25,3 +27,28 @@ these properties can be combined with incoming solar radiation to model the
 potential surface-reflected outgoing solar radiation:
 
 ![ROM](https://github.com/ReflectiveEarth/reflective-potential/blob/main/assets/ROM_v030.png)
+
+## Developer Setup
+
+1. Clone and change directory to the reflective-potential repo.
+  * `git clone https://github.com/ReflectiveEarth/reflective-potential.git`
+  * `cd reflective-potential`
+1. Create and activate a python virtual environment or conda environment.
+  * Python venv
+    * `python3 -m venv env`
+    * `source env/bin/activate`
+    * `pip install -r requirements.txt`
+  * Conda env
+    * `conda create --file environment.yml`
+    * `conda activate re`
+1. Launch Jupyter Lab.
+  * `jupyter lab`
+1. Open and run any of the notebooks in the eponymous directory.
+  * N.B. additional setup may be required. See the *Preliminaries* section of
+    each notebook.
+
+## Prerequisites
+
+* A Google Account in order to access Google Cloud Platform.
+* A Google Cloud project with billing enabled.
+* A Cloud Storage bucket to store project data.
