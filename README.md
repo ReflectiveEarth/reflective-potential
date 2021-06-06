@@ -52,3 +52,4 @@ potential surface-reflected outgoing solar radiation:
 * A Google Account in order to access Google Cloud Platform.
 * A Google Cloud project with billing enabled.
 * A Cloud Storage bucket to store project data.
+* A Copernicus Climate Data Store Account.
