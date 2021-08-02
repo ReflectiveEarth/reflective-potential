@@ -26,20 +26,20 @@ atmospheric transmittance and reflectance. When averaged over several decades,
 these properties can be combined with incoming solar radiation to model the
 potential surface-reflected outgoing solar radiation:
 
-![ROM](https://github.com/ReflectiveEarth/reflective-potential/blob/main/assets/ROM_v030.png)
+![ROM](https://github.com/ReflectiveEarth/reflective-potential/blob/main/assets/ROM_v041.png)
 
 ## Developer Setup
 
 1. Clone and change directory to the reflective-potential repo.
   * `git clone https://github.com/ReflectiveEarth/reflective-potential.git`
   * `cd reflective-potential`
-1. Create and activate the `conda`/`mamba` environment corresponding to the notebook you would like to run.
+2. Create and activate the `conda`/`mamba` environment corresponding to the notebook you would like to run.
   * e.g. environment for `01-ingest.ipynb`
     * `{conda | mamba} create --file {linux | macos}.ingest.environment.yml`
     * `conda activate ingest`
-1. Launch Jupyter Lab.
+3. Launch Jupyter Lab.
   * `jupyter lab`
-1. Open and run the  notebooks in the eponymous directory.
+4. Open and run the  notebooks in the eponymous directory.
   * N.B. additional setup may be required. See the *Preliminaries* section of
     each notebook.
 
