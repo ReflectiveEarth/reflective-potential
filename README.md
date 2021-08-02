@@ -33,13 +33,13 @@ potential surface-reflected outgoing solar radiation:
 1. Clone and change directory to the reflective-potential repo.
   * `git clone https://github.com/ReflectiveEarth/reflective-potential.git`
   * `cd reflective-potential`
-1. Create and activate the conda environment corresponding to the notebook you would like to run.
-  * e.g. Conda environment for `01-ingest.ipynb`
-    * `conda create --file environment.ingest.yml`
+1. Create and activate the `conda`/`mamba` environment corresponding to the notebook you would like to run.
+  * e.g. environment for `01-ingest.ipynb`
+    * `{conda | mamba} create --file {linux | macos}.ingest.environment.yml`
     * `conda activate ingest`
 1. Launch Jupyter Lab.
   * `jupyter lab`
-1. Open and run any of the notebooks in the eponymous directory.
+1. Open and run the  notebooks in the eponymous directory.
   * N.B. additional setup may be required. See the *Preliminaries* section of
     each notebook.
 
@@ -49,4 +49,4 @@ potential surface-reflected outgoing solar radiation:
 * A Google Cloud project with billing enabled.
 * A Cloud Storage bucket to store project data.
 * A Copernicus Climate Data Store Account.
-* conda, either [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://docs.anaconda.com/anaconda/install/index.html).
+* [conda](https://docs.conda.io/en/latest/miniconda.html) or [mamba](https://mamba.readthedocs.io/en/latest/).
