@@ -5,11 +5,13 @@ channels:
 dependencies:
   - affine=2.3.0
   - aiohttp=3.7.4.post0
+  - anyio=3.3.0
   - appnope=0.1.2
   - argon2-cffi=20.1.0
   - async-timeout=3.0.1
   - async_generator=1.10
   - attrs=21.2.0
+  - babel=2.9.1
   - backcall=0.2.0
   - backports=1.0
   - backports.functools_lru_cache=1.6.4
@@ -69,6 +71,7 @@ dependencies:
   - icu=68.1
   - idna=3.1
   - importlib-metadata=4.6.3
+  - importlib_metadata=4.6.3
   - ipykernel=6.0.3
   - ipython=7.25.0
   - ipython_genutils=0.2.0
@@ -78,10 +81,14 @@ dependencies:
   - jinja2=3.0.1
   - jpeg=9d
   - json-c=0.15
+  - json5=0.9.5
   - jsonschema=3.2.0
   - jupyter_client=6.1.12
   - jupyter_core=4.7.1
+  - jupyter_server=1.10.2
+  - jupyterlab=3.1.1
   - jupyterlab_pygments=0.1.2
+  - jupyterlab_server=2.6.1
   - jupyterlab_widgets=1.0.0
   - kealib=1.4.14
   - kiwisolver=1.3.1
@@ -132,6 +139,8 @@ dependencies:
   - mpich=3.4.2
   - msgpack-python=1.0.2
   - multidict=5.1.0
+  - nb_conda_kernels=2.3.1
+  - nbclassic=0.3.1
   - nbclient=0.5.3
   - nbconvert=6.1.0
   - nbformat=5.1.3
@@ -183,12 +192,14 @@ dependencies:
   - rasterio=1.2.6
   - readline=8.1
   - requests=2.26.0
+  - requests-unixsocket=0.2.0
   - rsa=4.7.2
   - scipy=1.7.0
   - send2trash=1.7.1
   - setuptools=49.6.0
   - shapely=1.7.1
   - six=1.16.0
+  - sniffio=1.2.0
   - snuggs=1.4.7
   - sortedcontainers=2.4.0
   - sqlite=3.36.0
@@ -207,6 +218,7 @@ dependencies:
   - urllib3=1.26.6
   - wcwidth=0.2.5
   - webencodings=0.5.1
+  - websocket-client=0.57.0
   - wheel=0.36.2
   - widgetsnbextension=3.5.1
   - xarray=0.19.0
