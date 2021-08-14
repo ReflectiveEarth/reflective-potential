@@ -53,6 +53,7 @@ dependencies:
   - freetype=2.10.4
   - freexl=1.0.6
   - fsspec=2021.7.0
+  - gdal=3.3.1
   - geos=3.9.1
   - geotiff=1.6.0
   - gettext=0.19.8.1
