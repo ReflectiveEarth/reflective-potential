@@ -1,7 +1,7 @@
 # reflective-potential
 ### An empirical analysis of Earth's reflective potential
 
-## Introduction
+## Overview
 
 Reflective Earth is on a mission to slow global warming as fast and safely as
 possible by increasing Earth's reflectivity to reduce its energy imbalance.
@@ -17,8 +17,8 @@ being received in the tropics and less being received at the poles. Clouds,
 water vapor, and aerosols (e.g. dust, smoke) scatter and absorb sunlight. These
 properties vary spatially as well.
 
-This code repository contains a workflow to estimate the potential of Earth's
-surface to reflect incoming sunlight back out to space. It uses data from the
+This code repository contains workflows to estimate the potential of Earth's
+surface to reflect incoming sunlight back out to space. We use data from the
 fifth European Centre for Medium-Range Weather Forecasts
 (ECMWF) reanalysis product (ERA5), specifically radiative fluxes at the surface
 and top of atmosphere. This allows us to estimate surface reflectance and
@@ -27,6 +27,19 @@ these properties can be combined with incoming solar radiation to model the
 potential surface-reflected outgoing solar radiation:
 
 ![ROM](https://github.com/ReflectiveEarth/reflective-potential/blob/main/assets/ROM_v041.png)
+
+## Respository Structure
+
+* README - overview, repo structure, developer setup, and prerequisites
+* `assets` - deliverable data and images
+* `environments` - conda / mamba environment files for macOS and linux
+* `notebooks` - jupyter notebooks for each step of the workflow
+  * `01-Ingest` - data download from Copernicus Climate Change Service and upload to Google Cloud
+  * `02-Preprocess` - data averaging from hourly-means to annual-means
+  * `03-Analyze` - data transformation through a simple model of reflected radiation
+  * `04-Deliver` - data deliverables created
+  * `05-Visualize` - data visualization for publication
+  * `utils.py` - utilities
 
 ## Developer Setup
 
