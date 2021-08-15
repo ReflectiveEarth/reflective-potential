@@ -19,8 +19,8 @@ properties vary spatially as well.
 
 This code repository contains workflows to estimate the potential of Earth's
 surface to reflect incoming sunlight back out to space. We use data from the
-fifth European Centre for Medium-Range Weather Forecasts
-(ECMWF) reanalysis product (ERA5), specifically radiative fluxes at the surface
+European Centre for Medium-Range Weather Forecasts (ECMWF) fifth generation 
+reanalysis product (ERA5), specifically radiative fluxes at the surface
 and top of atmosphere. This allows us to estimate surface reflectance and
 atmospheric transmittance and reflectance. When averaged over several decades,
 these properties can be combined with incoming solar radiation to model the
