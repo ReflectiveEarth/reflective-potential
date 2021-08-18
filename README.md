@@ -1,6 +1,10 @@
 # reflective-potential
 ### An empirical analysis of Earth's reflective potential
 
+> Contains modified [Copernicus Climate Change Service](https://climate.copernicus.eu/) information 
+> obtained in 2021. Neither the European Commission nor ECMWF is responsible for any use that may 
+> be made of the Copernicus information or data it contains.
+
 ## Overview
 
 Reflective Earth is on a mission to slow global warming as fast and safely as
