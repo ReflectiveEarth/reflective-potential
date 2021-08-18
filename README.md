@@ -1,8 +1,8 @@
 # reflective-potential
 ### An empirical analysis of Earth's reflective potential
 
-> Contains modified [Copernicus Climate Change Service](https://climate.copernicus.eu/) information 
-> obtained in 2021. Neither the European Commission nor ECMWF is responsible for any use that may 
+> Contains modified [Copernicus Climate Change Service](https://climate.copernicus.eu/) information
+> obtained in 2021. Neither the European Commission nor ECMWF is responsible for any use that may
 > be made of the Copernicus information or data it contains.
 
 ## Overview
@@ -23,7 +23,7 @@ properties vary spatially as well.
 
 This code repository contains workflows to estimate the potential of Earth's
 surface to reflect incoming sunlight back out to space. We use data from the
-European Centre for Medium-Range Weather Forecasts (ECMWF) fifth generation 
+European Centre for Medium-Range Weather Forecasts (ECMWF) fifth generation
 reanalysis product (ERA5), specifically radiative fluxes at the surface
 and top of atmosphere. This allows us to estimate surface reflectance and
 atmospheric transmittance and reflectance. When averaged over several decades,
@@ -63,7 +63,7 @@ potential surface-reflected outgoing solar radiation:
 ## Prerequisites
 
 * A Google Account in order to access Google Cloud Platform.
-* A Google Cloud project with billing enabled.
-* A Cloud Storage bucket to store project data.
-* A Copernicus Climate Data Store Account.
-* [conda](https://docs.conda.io/en/latest/miniconda.html) or [mamba](https://mamba.readthedocs.io/en/latest/).
+* A Google Cloud project with billing enabled. *Requester Pays* is turned on for all Google Cloud Storage buckets in this repo. Google Cloud Storage requests will incur charges.
+* Optionally, [conda](https://docs.conda.io/en/latest/miniconda.html) or [mamba](https://mamba.readthedocs.io/en/latest/) to manage package dependencies.
+* Optionally, one or more Google Cloud Storage buckets to store project data.
+* Optionally, a Copernicus Climate Data Store Account to ingest C3S data.
