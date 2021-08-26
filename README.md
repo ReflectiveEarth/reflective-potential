@@ -35,6 +35,7 @@ potential surface-reflected outgoing solar radiation:
 ## Respository Structure
 
 * `README` - overview, repo structure, developer setup, and prerequisites
+* `LICENSE` - open source license
 * `assets` - deliverable data and images
 * `environments` - conda / mamba environment files for macOS and linux
 * `notebooks` - jupyter notebooks for each step of the workflow
