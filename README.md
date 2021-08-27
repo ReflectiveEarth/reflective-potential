@@ -43,6 +43,7 @@ potential surface-reflected outgoing solar radiation:
   * `04-Deliver` - data deliverables created
   * `05-Visualize` - data visualization for publication
   * `utils.py` - utilities
+* `CODE_OF_CONDUCT` - the code of conduct that contributors and maintainers pledge to follow 
 * `LICENSE` - open source license
 * `README` - overview, repo structure, developer setup, and prerequisites
 
