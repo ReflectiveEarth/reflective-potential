@@ -1,5 +1,6 @@
 # reflective-potential
-### An empirical analysis of Earth's reflective potential
+
+### An empirical analysis of Earth's surface reflectivity potential
 
 > Contains modified [Copernicus Climate Change Service][copernicus] 
 > information obtained in 2021. Neither the European Commission nor 
