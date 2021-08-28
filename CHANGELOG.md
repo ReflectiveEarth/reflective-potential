@@ -24,7 +24,7 @@ Unreleased
   * Changelog
   * Code of Conduct
   * Contribution guidelines
-  * Support suggestions
+  * Support resources ([GH-8], [PR-9])
   * License
 
 <!-- Definitions -->
@@ -35,3 +35,5 @@ Unreleased
 [PR-4]: https://github.com/ReflectiveEarth/reflective-potential/pull/4
 [GH-5]: https://github.com/ReflectiveEarth/reflective-potential/issues/5
 [PR-6]: https://github.com/ReflectiveEarth/reflective-potential/pull/6
+[GH-8]: https://github.com/ReflectiveEarth/reflective-potential/issues/8
+[PR-9]: https://github.com/ReflectiveEarth/reflective-potential/pull/9
