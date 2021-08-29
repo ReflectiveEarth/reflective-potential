@@ -17,6 +17,7 @@ Unreleased
   * Analyze ([PR-2])
   * Deliver ([PR-4])
   * Visualize ([PR-3])
+* GitHub pull request and issue templates ([GH-10], [PR-11])
 * Static asset files ([PR-2])
 * Environment files ([PR-2])
 * Community health files ([GH-5], [PR-6])
@@ -37,3 +38,5 @@ Unreleased
 [PR-6]: https://github.com/ReflectiveEarth/reflective-potential/pull/6
 [GH-8]: https://github.com/ReflectiveEarth/reflective-potential/issues/8
 [PR-9]: https://github.com/ReflectiveEarth/reflective-potential/pull/9
+[GH-10]: https://github.com/ReflectiveEarth/reflective-potential/issues/10
+[PR-11]: https://github.com/ReflectiveEarth/reflective-potential/pull/11
