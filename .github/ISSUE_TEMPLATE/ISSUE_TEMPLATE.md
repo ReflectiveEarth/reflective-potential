@@ -1,5 +1,5 @@
 ---
-name: Custom issue
+name: Other issue
 about: "Create a custom issue."
 ---
 
