@@ -61,7 +61,7 @@ potential surface-reflected outgoing solar radiation:
 2. Create and activate the `conda`/`mamba` environment corresponding to the 
    notebook you would like to run.
    * e.g. environment for `01-ingest.ipynb`
-     * `{conda | mamba} create --file {linux | macos}.ingest.environment.yml`
+     * `{conda | mamba} create env --file environment/{linux | macos}.ingest.environment.yml`
      * `conda activate ingest`
 3. Launch Jupyter Lab.
    * `jupyter lab`
