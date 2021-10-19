@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+### Changed
+
+* Jupyter Notebooks
+  * Analyze - disaggregate surface albedo and nearby albedo ([GH-15])
+
 
 [v0.1.0] - 2021/08/30
 ---------------------
@@ -46,6 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [PR-11]: https://github.com/ReflectiveEarth/reflective-potential/pull/11
 [GH-12]: https://github.com/ReflectiveEarth/reflective-potential/issues/12
 [PR-13]: https://github.com/ReflectiveEarth/reflective-potential/pull/13
+[GH-15]: https://github.com/ReflectiveEarth/reflective-potential/issues/15
 
 [Unreleased]: https://github.com/ReflectiveEarth/reflective-potential/compare/v0.1.0...HEAD
 [v0.1.0]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v0.1.0
