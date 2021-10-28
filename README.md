@@ -2,8 +2,8 @@
 
 ### An empirical analysis of Earth's surface reflectivity potential
 
-> Contains modified [Copernicus Climate Change Service][copernicus] 
-> information obtained in 2021. Neither the European Commission nor 
+> Contains modified [Copernicus Climate Change Service][copernicus]
+> information obtained in 2021. Neither the European Commission nor
 > ECMWF is responsible for any use that may be made of the Copernicus
 > information or data it contains.
 
@@ -37,17 +37,17 @@ potential surface-reflected outgoing solar radiation:
 * `assets` - deliverable data and images
 * `environments` - conda / mamba environment files for macOS and linux
 * `notebooks` - jupyter notebooks for each step of the workflow
-  * `01-Ingest` - data download from Copernicus Climate Change Service and 
+  * `01-Ingest` - data download from Copernicus Climate Change Service and
     upload to Google Cloud
   * `02-Preprocess` - data averaging from hourly-means to annual-means
-  * `03-Analyze` - data transformation through a simple model of reflected 
+  * `03-Analyze` - data transformation through a simple model of reflected
     radiation
   * `04-Deliver` - data deliverables created
   * `05-Visualize` - data visualization for publication
   * `utils.py` - utilities
 * `CHANGELOG` - chronologically ordered list of notable changes
-* `CODE_OF_CONDUCT` - the code of conduct that contributors and maintainers 
-  pledge to follow 
+* `CODE_OF_CONDUCT` - the code of conduct that contributors and maintainers
+  pledge to follow
 * `CONTRIBUTING` - guidelines for making your own contribution to this project
 * `LICENSE` - open source license
 * `README` - overview, repo structure, developer setup, and prerequisites
@@ -58,10 +58,10 @@ potential surface-reflected outgoing solar radiation:
 1. Clone and change directory to the reflective-potential repo.
    * `git clone https://github.com/ReflectiveEarth/reflective-potential.git`
    * `cd reflective-potential`
-2. Create and activate the `conda`/`mamba` environment corresponding to the 
+2. Create and activate the `conda`/`mamba` environment corresponding to the
    notebook you would like to run.
    * e.g. environment for `01-ingest.ipynb`
-     * `{conda | mamba} create env --file environment/{linux | macos}.ingest.environment.yml`
+     * `{conda | mamba} env create --file environment/{linux | macos}.ingest.environment.yml`
      * `conda activate ingest`
 3. Launch Jupyter Lab.
    * `jupyter lab`
@@ -72,8 +72,8 @@ potential surface-reflected outgoing solar radiation:
 ### Prerequisites
 
 * A Google Account in order to access Google Cloud Platform.
-* A Google Cloud project with billing enabled. *Requester Pays* is turned on for 
-  all Google Cloud Storage buckets in this repo. Google Cloud Storage requests 
+* A Google Cloud project with billing enabled. *Requester Pays* is turned on for
+  all Google Cloud Storage buckets in this repo. Google Cloud Storage requests
   will incur charges.
 * Optionally, [conda][conda] or [mamba][mamba] to manage package dependencies.
 * Optionally, one or more Google Cloud Storage buckets to store project data.
@@ -81,17 +81,17 @@ potential surface-reflected outgoing solar radiation:
 
 ## Support
 
-Read the [support][support] guidelines for guidance on how to reach out for help 
+Read the [support][support] guidelines for guidance on how to reach out for help
 with this project.
 
 ## Contributing
 
-We welcome contributions that improve the quality of our code and/or science. 
+We welcome contributions that improve the quality of our code and/or science.
 Before you dive in, read the [contribution][contributing] guidelines.
 
 ## Code of Conduct
 
-This project has a [code of conduct][conduct]. By interacting with this 
+This project has a [code of conduct][conduct]. By interacting with this
 repository, organization, or community you agree to abide by its terms.
 
 ## License
@@ -107,5 +107,5 @@ repository, organization, or community you agree to abide by its terms.
 [copernicus]: https://climate.copernicus.eu/
 [license]: LICENSE.md
 [mamba]: https://mamba.readthedocs.io/en/latest/
-[rom]: assets/ROM_v041.png
+[rom]: assets/ROM_v042.png
 [support]: SUPPORT.md

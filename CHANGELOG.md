@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+### Changed
+
+* Jupyter Notebooks ([GH-15], [PR-16])
+  * Analyze - disaggregate surface albedo and nearby albedo
+* Community health files ([GH-15], [PR-16])
+  * Readme - ROM image, conda/mamba create environment command
+  * Changelog
+
 
 [v0.1.0] - 2021/08/30
 ---------------------
@@ -25,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Static asset files ([PR-2])
 * Environment files ([PR-2])
 * Community health files ([GH-5], [PR-6])
-  * Readme 
+  * Readme
   * Changelog
   * Code of Conduct
   * Contribution guidelines
@@ -46,6 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [PR-11]: https://github.com/ReflectiveEarth/reflective-potential/pull/11
 [GH-12]: https://github.com/ReflectiveEarth/reflective-potential/issues/12
 [PR-13]: https://github.com/ReflectiveEarth/reflective-potential/pull/13
+[GH-15]: https://github.com/ReflectiveEarth/reflective-potential/issues/15
+[PR-16]: https://github.com/ReflectiveEarth/reflective-potential/pull/16
 
 [Unreleased]: https://github.com/ReflectiveEarth/reflective-potential/compare/v0.1.0...HEAD
 [v0.1.0]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v0.1.0
