@@ -9,14 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+### Changed
+
+* Jupyter Notebooks
+  * Validate - replicate results with an independent dataset ([GH-17], [PR-19])
+
 
 [v0.1.1] - 2022/03/29
 
 ### Changed
 
-* Jupyter Notebooks
-  * Analyze - disaggregate surface albedo and nearby albedo ([GH-15], [PR-16])
-  * Validate - replicate results with an independent dataset ([GH-17], [PR-19])
+* Jupyter Notebooks ([GH-15], [PR-16])
+  * Analyze - disaggregate surface albedo and nearby albedo
 * Community health files ([GH-15], [PR-16])
   * Readme - ROM image, conda/mamba create environment command
   * Changelog
