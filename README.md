@@ -24,11 +24,14 @@ properties vary spatially as well.
 This code repository contains workflows to estimate the potential of Earth's
 surface to reflect incoming sunlight back out to space. We use data from the
 European Centre for Medium-Range Weather Forecasts (ECMWF) fifth generation
-reanalysis product (ERA5), specifically radiative fluxes at the surface
-and top of atmosphere. This allows us to estimate surface reflectance and
-atmospheric transmittance and reflectance. When averaged over several decades,
-these properties can be combined with incoming solar radiation to model the
-potential surface-reflected outgoing solar radiation:
+reanalysis product (ERA5) and National Aeronautics and Space Administration
+(NASA) Clouds and the Earth's Radiant Energy System (CERES) Energy Balanced
+and Filled (EBAF) satellite-derived product, specifically radiative fluxes at
+the surface and top of atmosphere. This allows us to estimate surface
+reflectance and atmospheric transmittance and reflectance. When averaged over
+several decades, these properties can be combined with incoming solar radiation
+and surface albedo to model the potential surface-reflected outgoing solar
+radiation:
 
 ![ROM][rom]
 
@@ -44,7 +47,7 @@ potential surface-reflected outgoing solar radiation:
     radiation
   * `04-Validate` - replicate results with an independent dataset
   * `05-Visualize` - data visualization for publication
-  * `utils.py` - utilities
+  * `utils.py` - utility functions
 * `CHANGELOG` - chronologically ordered list of notable changes
 * `CODE_OF_CONDUCT` - the code of conduct that contributors and maintainers
   pledge to follow
