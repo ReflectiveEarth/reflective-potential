@@ -42,7 +42,7 @@ potential surface-reflected outgoing solar radiation:
   * `02-Preprocess` - data averaging from hourly-means to annual-means
   * `03-Analyze` - data transformation through a simple model of reflected
     radiation
-  * `04-Deliver` - data deliverables created
+  * `04-Validate` - replicate results with an independent dataset
   * `05-Visualize` - data visualization for publication
   * `utils.py` - utilities
 * `CHANGELOG` - chronologically ordered list of notable changes
@@ -96,7 +96,7 @@ repository, organization, or community you agree to abide by its terms.
 
 ## License
 
-[Clear BSD][license] © 2021 [Reflective Earth][author]
+[Clear BSD][license] © 2022 [Reflective Earth][author]
 
 <!-- Definitions -->
 
