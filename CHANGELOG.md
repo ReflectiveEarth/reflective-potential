@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+### Changed
+
+* Jupyter Notebooks
+  * Validate - replicate results with an independent dataset ([GH-17], [PR-19])
+
 
 [v0.1.1] - 2022/03/29
 
@@ -59,6 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [PR-13]: https://github.com/ReflectiveEarth/reflective-potential/pull/13
 [GH-15]: https://github.com/ReflectiveEarth/reflective-potential/issues/15
 [PR-16]: https://github.com/ReflectiveEarth/reflective-potential/pull/16
+[GH-17]: https://github.com/ReflectiveEarth/reflective-potential/issues/17
+[PR-19]: https://github.com/ReflectiveEarth/reflective-potential/pull/19
 
 [Unreleased]: https://github.com/ReflectiveEarth/reflective-potential/compare/v0.1.1...HEAD
 [v0.1.1]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v0.1.1
