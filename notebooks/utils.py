@@ -5,9 +5,9 @@ from google.cloud import storage
 
 
 def check_environment(name):
-    """Check the current conda environment and warn if other than expected."""    
+    """Check the current conda environment and warn if other than expected."""
     if os.environ["CONDA_DEFAULT_ENV"] != name:
-        warn(f"conda environment: {name} not activated." 
+        warn(f"conda environment: {name} not activated."
               "Some dependencies may not be installed.")
 
 
@@ -47,9 +47,9 @@ def put_data_gcs(file_name, bucket_name, local_path=".", user_project=None):
     blob.upload_from_filename(filename=os.path.join(local_path, file_name))
 
 
-def compute_radiative_properties(dataset):
-    """Compute new variables based on a model following by Salamanca et al. (2012) and
-    Stephens et al. (2015).
+def compute_radiative_properties(data):
+    """Compute new variables based on a model following by Salamanca et al.
+    (2012) and Stephens et al. (2015).
 
     Salamanca, F., Tonse, S., Menon, S., Garg, V., Singh, K., Naja, M.,
     and Fischer, M. L. (2012), Top-of-atmosphere radiative cooling with
@@ -60,86 +60,86 @@ def compute_radiative_properties(dataset):
     and Li, J. (2015), The albedo of Earth. Rev. Geophys., 53, 141–163.
     doi: 10.1002/2014RG000449.
 
-    Specifically, compute system reflectivity, transmittance, and surface albedo, then
-    use those properties to compute the reflectance and transmittance of a 1-layer
-    atmosphere following the simple model following Salamanca et al. (2012) and
-    Stephens et al. (2015).
+    Specifically, compute system reflectivity, transmittance, and surface
+    albedo, then use those properties to compute the reflectance and
+    transmittance of a 1-layer atmosphere following the simple model following
+    Salamanca et al. (2012) and Stephens et al. (2015).
 
-    Finally, compute the surface contribution to outgoing solar radiation and the potential
-    surface contribution to the outgoing solar radiation. The latter is defined as the solar
-    radiation reflected by a reference surface with albedo = 1 surrouded by the observed surface
-    albedo nearby. These two properties are of particular interest to Reflective Earth in this
-    analysis.
+    Finally, compute the surface contribution to outgoing solar radiation and
+    the potential surface contribution to the outgoing solar radiation. The
+    latter is defined as the solar radiation reflected by a reference surface
+    with albedo = 1 surrouded by the observed surface albedo nearby. These two
+    properties are of particular interest to Reflective Earth in this analysis.
 
     Args:
-        dataset: xarray dataset containing shortwave radiative fluxes at the surface
-            and top of atmosphere.
+        data: xarray Dataset containing shortwave radiative fluxes at the
+            surface and top of atmosphere.
 
     Returns:
-        xarray dataset with additional variables added.
+        xarray Dataset with additional variables added.
     """
     # System properties
-    dataset["R"] = dataset["tosr"] / dataset["tisr"]
-    dataset["R"] = fill_nas(dataset["R"])
-    dataset["R"].attrs["long_name"] = "Planetary albedo"
-    dataset["R"].attrs["standard_name"] = "planetary_albedo"
-    dataset["R"].attrs["units"] = "1"
+    data["R"] = data["tosr"] / data["tisr"]
+    data["R"] = fill_nas(data["R"])
+    data["R"].attrs["long_name"] = "Planetary albedo"
+    data["R"].attrs["standard_name"] = "planetary_albedo"
+    data["R"].attrs["units"] = "1"
 
-    dataset["T"] = dataset["ssrd"] / dataset["tisr"]
-    dataset["T"] = fill_nas(dataset["T"])
-    dataset["T"].attrs["long_name"] = "Planetary transmission"
-    dataset["T"].attrs["standard_name"] = "planetary_transmittance"
-    dataset["T"].attrs["units"] = "1"
+    data["T"] = data["ssrd"] / data["tisr"]
+    data["T"] = fill_nas(data["T"])
+    data["T"].attrs["long_name"] = "Planetary transmission"
+    data["T"].attrs["standard_name"] = "planetary_transmittance"
+    data["T"].attrs["units"] = "1"
 
-    dataset["A"] = 1 - dataset["R"]
-    dataset["A"] = fill_nas(dataset["A"])
-    dataset["A"].attrs["long_name"] = "Planetary absorption"
-    dataset["A"].attrs["standard_name"] = "planetary_aborptance"
-    dataset["A"].attrs["units"] = "1"
+    data["A"] = 1 - data["R"]
+    data["A"] = fill_nas(data["A"])
+    data["A"].attrs["long_name"] = "Planetary absorption"
+    data["A"].attrs["standard_name"] = "planetary_aborptance"
+    data["A"].attrs["units"] = "1"
 
-    dataset["alpha"] = dataset["ssru"] / dataset["ssrd"]
-    dataset["alpha"].attrs["long_name"] = "Surface albedo"
-    dataset["alpha"].attrs["standard_name"] = "surface_albedo"
-    dataset["alpha"].attrs["units"] = "1"
+    data["alpha"] = data["ssru"] / data["ssrd"]
+    data["alpha"].attrs["long_name"] = "Surface albedo"
+    data["alpha"].attrs["standard_name"] = "surface_albedo"
+    data["alpha"].attrs["units"] = "1"
 
     # Intrinsic properties
-    dataset["a"] = (dataset["tisr"] * dataset["A"] - dataset["ssrd"] * (1 - dataset["alpha"])) / dataset["tisr"]
-    dataset["a"] = fill_nas(dataset["a"])
-    dataset["a"].attrs["long_name"] = "1-layer atmospheric absorption"
-    dataset["a"].attrs["standard_name"] = "atmosphere_absorptance"
-    dataset["a"].attrs["units"] = "1"
+    data["a"] = (data["tisr"] * data["A"] - data["ssrd"] * (1 - data["alpha"])) / data["tisr"]
+    data["a"] = fill_nas(data["a"])
+    data["a"].attrs["long_name"] = "1-layer atmospheric absorption"
+    data["a"].attrs["standard_name"] = "atmosphere_absorptance"
+    data["a"].attrs["units"] = "1"
 
-    dataset["r"] = dataset["R"] - (dataset["alpha"] * dataset["T"]) * ((1 - dataset["alpha"] * dataset["R"]) /
-                                                                       (1 - dataset["alpha"]**2 * dataset["T"]**2))
-    dataset["r"] = fill_nas(dataset["r"])
-    dataset["r"].attrs["long_name"] = "1-layer atmosphere reflectivity"
-    dataset["r"].attrs["standard_name"] = "atmosphere_reflectance"
-    dataset["r"].attrs["units"] = "1"
+    data["r"] = data["R"] - (data["alpha"] * data["T"]) * ((1 - data["alpha"] * data["R"]) /
+                                                           (1 - data["alpha"]**2 * data["T"]**2))
+    data["r"] = fill_nas(data["r"])
+    data["r"].attrs["long_name"] = "1-layer atmosphere reflectivity"
+    data["r"].attrs["standard_name"] = "atmosphere_reflectance"
+    data["r"].attrs["units"] = "1"
 
-    dataset["t"] = 1 - dataset["r"] - dataset["a"]
-    dataset["t"] = fill_nas(dataset["t"])
-    dataset["t"].attrs["long_name"] = "1-layer atmospheric transmission"
-    dataset["t"].attrs["standard_name"] = "atmosphere_transmittance"
-    dataset["t"].attrs["units"] = "1"
+    data["t"] = 1 - data["r"] - data["a"]
+    data["t"] = fill_nas(data["t"])
+    data["t"].attrs["long_name"] = "1-layer atmospheric transmission"
+    data["t"].attrs["standard_name"] = "atmosphere_transmittance"
+    data["t"].attrs["units"] = "1"
 
     # Reflective properties
-    dataset["srosr"] = dataset["tisr"] * (dataset["R"] - dataset["r"])
-    dataset["srosr"].attrs["long_name"] = "Surface-reflected outgoing solar radiation"
-    dataset["srosr"].attrs["standard_name"] = "toa_outgoing_shortwave_flux"
-    dataset["srosr"].attrs["units"] = dataset["tisr"].attrs["units"]
+    data["srosr"] = data["tisr"] * (data["R"] - data["r"])
+    data["srosr"].attrs["long_name"] = "Surface-reflected outgoing solar radiation"
+    data["srosr"].attrs["standard_name"] = "toa_outgoing_shortwave_flux"
+    data["srosr"].attrs["units"] = data["tisr"].attrs["units"]
 
-    dataset["psrosr"] = dataset["tisr"] * (dataset["t"]**2 / (1 - (dataset["alpha"] * dataset["r"])))
-    dataset["psrosr"].attrs["long_name"] = "Potential surface-reflected outgoing solar radiation"
-    dataset["psrosr"].attrs["standard_name"] = "toa_outgoing_shortwave_flux"
-    dataset["psrosr"].attrs["units"] = dataset["tisr"].attrs["units"]
+    data["psrosr"] = data["tisr"] * (data["t"]**2 / (1 - (data["alpha"] * data["r"])))
+    data["psrosr"].attrs["long_name"] = "Potential surface-reflected outgoing solar radiation"
+    data["psrosr"].attrs["standard_name"] = "toa_outgoing_shortwave_flux"
+    data["psrosr"].attrs["units"] = data["tisr"].attrs["units"]
 
-    check_data(dataset)
+    check_radiative_properties(data)
 
-    return dataset
+    return data
 
 
-def check_data(data):
-    """Check data for errors.
+def check_radiative_properties(data):
+    """Check radiative property data for errors.
 
     Args:
         data: xarray Dataset with radiative properties.
@@ -167,8 +167,8 @@ def fill_nas(data):
     Returns:
         xarray DataArray with zeros filled in certain conditions.
     """
-    data = data.where(~np.isinf(data)).fillna(np.nan)  # fill infinite values with 0
-    data = data.where(data < 1).fillna(np.nan)  # fill values greater than 1 with 1
-    data = data.where(data > 0).fillna(np.nan)  # fill values less than 0 with 0
+    data = data.where(~np.isinf(data)).fillna(np.nan)
+    data = data.where(data < 1).fillna(np.nan)
+    data = data.where(data > 0).fillna(np.nan)
 
     return data
