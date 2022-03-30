@@ -99,7 +99,7 @@ repository, organization, or community you agree to abide by its terms.
 
 ## License
 
-[Clear BSD][license] © 2022 [Reflective Earth][author]
+[Clear BSD][license] © 2021-2022 [Reflective Earth][author]
 
 <!-- Definitions -->
 
