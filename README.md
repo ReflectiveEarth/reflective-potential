@@ -2,6 +2,8 @@
 
 ### An empirical analysis of Earth's surface reflectivity potential
 
+[![DOI](https://zenodo.org/badge/373627024.svg)](https://zenodo.org/badge/latestdoi/373627024)
+
 > Contains modified [Copernicus Climate Change Service][copernicus]
 > information obtained in 2021. Neither the European Commission nor
 > ECMWF is responsible for any use that may be made of the Copernicus
