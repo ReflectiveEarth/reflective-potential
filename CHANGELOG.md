@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Readme - DOI badge
 
+### Changed
+
+* Improved consistency of environment files across platforms ([GH-21], [PR-22])
+
 
 [v1.0.0] - 2022/03/30
 ---------------------
@@ -87,6 +91,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [GH-18]: https://github.com/ReflectiveEarth/reflective-potential/issues/18
 [PR-19]: https://github.com/ReflectiveEarth/reflective-potential/pull/19
 [PR-20]: https://github.com/ReflectiveEarth/reflective-potential/pull/20
+[GH-21]: https://github.com/ReflectiveEarth/reflective-potential/issues/21
+[PR-22]: https://github.com/ReflectiveEarth/reflective-potential/pull/22
 
 [Unreleased]: https://github.com/ReflectiveEarth/reflective-potential/compare/v1.0.0...HEAD
 [v1.0.0]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v1.0.0
