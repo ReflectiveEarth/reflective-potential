@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+
+[v1.0.1] - 2022/06/16
+---------------------
+
 ### Added
 
 * Readme - DOI badge
@@ -95,6 +99,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [PR-22]: https://github.com/ReflectiveEarth/reflective-potential/pull/22
 
 [Unreleased]: https://github.com/ReflectiveEarth/reflective-potential/compare/v1.0.0...HEAD
+[v1.0.1]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v1.0.0
 [v0.1.1]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v0.1.1
 [v0.1.0]: https://github.com/ReflectiveEarth/reflective-potential/releases/tag/v0.1.0
