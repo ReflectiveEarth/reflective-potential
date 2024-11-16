@@ -1,14 +1,31 @@
 import os
+import sys
+
 import numpy as np
 from warnings import warn
 from google.cloud import storage
 
 
-def check_environment(name):
-    """Check the current conda environment and warn if other than expected."""
-    if os.environ["CONDA_DEFAULT_ENV"] != name:
-        warn(f"conda environment: {name} not activated."
-              "Some dependencies may not be installed.")
+def check_environment(expected_name):
+    """
+    Check the current conda environment in a Jupyter notebook and warn if it's
+    other than the expected environment.
+
+    Parameters:
+        expected_name (str): The name of the expected conda environment.
+    """
+    python_path = sys.executable
+    if "envs" in python_path:
+        current_env = python_path.split("/")[-3]
+    else:
+        current_env = "base"
+
+    if current_env != expected_name:
+        warn(
+            f"Expected conda environment '{expected_name}' " +
+            f"but detected environment '{current_env}'.\n"
+            "Some dependencies may not be installed or configured properly."
+        )
 
 
 def get_data_gcs(file_name, bucket_name, local_path=".", user_project=None):
@@ -103,32 +120,34 @@ def compute_radiative_properties(data):
     data["alpha"].attrs["units"] = "1"
 
     # Intrinsic properties
-    data["a"] = (data["tisr"] * data["A"] - data["ssrd"] * (1 - data["alpha"])) / data["tisr"]
-    data["a"] = fill_nas(data["a"])
-    data["a"].attrs["long_name"] = "1-layer atmospheric absorption"
-    data["a"].attrs["standard_name"] = "atmosphere_absorptance"
-    data["a"].attrs["units"] = "1"
-
-    data["r"] = data["R"] - (data["alpha"] * data["T"]) * ((1 - data["alpha"] * data["R"]) /
-                                                           (1 - data["alpha"]**2 * data["T"]**2))
-    data["r"] = fill_nas(data["r"])
-    data["r"].attrs["long_name"] = "1-layer atmosphere reflectivity"
-    data["r"].attrs["standard_name"] = "atmosphere_reflectance"
-    data["r"].attrs["units"] = "1"
-
-    data["t"] = 1 - data["r"] - data["a"]
+    data["t"] = data["T"] * ((1 - data["alpha"] * data["R"]) /
+                             (1 - data["alpha"]**2 * data["T"]**2))
     data["t"] = fill_nas(data["t"])
     data["t"].attrs["long_name"] = "1-layer atmospheric transmission"
     data["t"].attrs["standard_name"] = "atmosphere_transmittance"
     data["t"].attrs["units"] = "1"
 
+    data["r"] = data["R"] - (data["alpha"] * data["T"] * data["t"])
+    data["r"] = fill_nas(data["r"])
+    data["r"].attrs["long_name"] = "1-layer atmosphere reflectivity"
+    data["r"].attrs["standard_name"] = "atmosphere_reflectance"
+    data["r"].attrs["units"] = "1"
+
+    data["a"] = 1 - data["r"] - data["t"]
+    data["a"] = fill_nas(data["a"])
+    data["a"].attrs["long_name"] = "1-layer atmospheric absorptance"
+    data["a"].attrs["standard_name"] = "atmosphere_absorptance"
+    data["a"].attrs["units"] = "1"
+
     # Reflective properties
-    data["srosr"] = data["tisr"] * (data["R"] - data["r"])
+    data["srosr"] = data["tisr"] * ((data["t"]**2 * data["alpha"]) /
+                                    (1 - (data["alpha"] * data["r"])))
     data["srosr"].attrs["long_name"] = "Surface-reflected outgoing solar radiation"
     data["srosr"].attrs["standard_name"] = "toa_outgoing_shortwave_flux"
     data["srosr"].attrs["units"] = data["tisr"].attrs["units"]
 
-    data["psrosr"] = data["tisr"] * (data["t"]**2 / (1 - (data["alpha"] * data["r"])))
+    data["psrosr"] = data["tisr"] * ((data["t"]**2) /
+                                     (1 - (data["alpha"] * data["r"])))
     data["psrosr"].attrs["long_name"] = "Potential surface-reflected outgoing solar radiation"
     data["psrosr"].attrs["standard_name"] = "toa_outgoing_shortwave_flux"
     data["psrosr"].attrs["units"] = data["tisr"].attrs["units"]
