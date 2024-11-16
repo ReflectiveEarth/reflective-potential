@@ -9,9 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+
+[v1.0.2] - 2024/11/18
+---------------------
+
+### Added
+
+* Image of ROM version 0.4.3 resulting from bugfix
+
 ### Changed
 
-* Update environment files
+* Jupyter Notebooks
+  * Analyze - fixed typo in computation of *t*, re-ran results
+  * Validate - re-ran results after bugfix
+  * Visualization - re-ran results after bugfix
+* Conda environment files
+  * Upgraded *analyze*, *validate*, and *visualize*
+* README
+  * Swapped ROM image of prior version 0.4.2 with revised version 0.4.3
+  * Updated copyright year
 
 
 [v1.0.1] - 2022/06/16
