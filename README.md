@@ -101,7 +101,7 @@ repository, organization, or community you agree to abide by its terms.
 
 ## License
 
-[Clear BSD][license] © 2021-2022 [Reflective Earth][author]
+[Clear BSD][license] © 2021-2024 [Reflective Earth][author]
 
 <!-- Definitions -->
 
@@ -112,5 +112,5 @@ repository, organization, or community you agree to abide by its terms.
 [copernicus]: https://climate.copernicus.eu/
 [license]: LICENSE.md
 [mamba]: https://mamba.readthedocs.io/en/latest/
-[rom]: assets/ROM_v042.png
+[rom]: assets/ROM_v043.png
 [support]: SUPPORT.md
